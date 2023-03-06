@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[29]:
-
-
 import cv2
 import numpy as np
 from PIL import Image
@@ -27,10 +21,3 @@ mask_2 = mask_0 + mask_1
 im_array[np.where(mask_2 == 255)] = [0, 0, 0]
 
 display(Image.fromarray(cv2.cvtColor(im_array, cv2.COLOR_BGR2RGB)))
-
-
-# In[ ]:
-
-
-
-
