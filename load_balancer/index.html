@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ML Model Load Balancer</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+      body {
+        padding: 2rem;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      label {
+        font-weight: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>REFRESH page after processing new request to see updated loaded models</p><h1 class="mb-4">2 Pre_Loaded Models</h1>
+      <ul>
+        {% for model in loaded_models %}
+        <li>{{ model }}</li>
+        {% endfor %}
+      </ul>
+      <h1 class="mt-4">Process_Request</h1>
+      <form method="POST" action="/process_request">
+        <div class="form-group">
+          <label for="model">Enter Model Name: </label>
+          <input type="text" class="form-control" id="model" name="model" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Process</button>
+      </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
