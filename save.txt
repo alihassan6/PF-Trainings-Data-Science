@@ -1,0 +1,41 @@
+touch text{1..10}.txt
+...
+cp text{1..10}.txt ../d
+..
+for file in *.py; do touch ../p/"$file"; done
+...
+mkdir d ; cd abc ; cp *.txt ../d
+...
+mkdir p ; cd abc 
+ali-hassan@alihassan:/media/ali-hassan/8A56FC4956FC3811/PF_DataScience/abc$ for file in *.py; do touch ../p/"$file"; done
+...
+ls | grep -c "\.jpeg$"
+...
+for file in *.jpeg; do touch ../labels/"${file%.*}.txt"; done
+...
+for file in t/images/*.jpeg; do
+>   if [ -e "t/labels/$(basename "${file%.*}").txt" ]; then
+>     cp "$file" t/final/
+>   fi
+> done
+
+...
+grep -r "hello world" abc/*.py | cut -d: -f1
+abc/5.py
+...
+grep -r "hello world" abc/*.py
+abc/5.py:print("hello world")
+...
+pip list | grep -i ten
+fasteners              0.14.1       
+unattended-upgrades    0.1
+...
+pgrep -f notebook
+...
+if grep -q  "hello world" "$1"; then
+    echo "Yes"
+else
+    echo "Not"
+fi
+...
+
